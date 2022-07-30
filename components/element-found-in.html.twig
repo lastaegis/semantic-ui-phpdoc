@@ -1,0 +1,4 @@
+<i class="code" title="{{ node.file.path }}">{{ node.file|route('file:short') }} : {{ node.line }}</i>
+{% if node.file.source %}
+    <a href="{{ target_path }}#source-view.{{ node.line }}" data-line="{{ node.line }}" data-modal="source-view"></a>
+{% endif %}

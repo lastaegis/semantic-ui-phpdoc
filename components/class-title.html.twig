@@ -1,0 +1,33 @@
+<div class="example">
+    <h3 class="ui header">
+        <a class="ui olive circular label" style="margin-left: 0px !important;">C</a> {{ node.name }}
+
+        {% if node.parent %}
+            <label class="label blue">extends</label> {{ node.parent|route('class:short') }}
+        {% endif %}
+
+        {% if usesPackages %}
+            <p>
+                in package
+                {% for breadcrumb in packages(node) %}
+                    <a href="{{ link(breadcrumb) }}">{{ breadcrumb.name }}</a>
+                {% endfor %}
+            </p>
+        {% endif %}
+
+        {% if node.interfaces is not empty %}
+            implements
+            {% for interface in node.interfaces %}
+                {{ interface|route('class:short') }}{% if not loop.last %}, {% endif %}
+            {% endfor %}
+        {% endif %}
+
+        {% if node.usedTraits is not empty %}
+            Uses
+            {% for trait in node.usedTraits %}
+                {{ trait|route('class:short') }}{% if not loop.last %}, {% endif %}
+            {% endfor %}
+        {% endif %}
+        {{ include('components/element-found-in.html.twig') }}
+    </h3>
+</div>

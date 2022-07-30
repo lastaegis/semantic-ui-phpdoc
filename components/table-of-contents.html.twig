@@ -1,0 +1,83 @@
+{% if packages|default([]) is not empty %}
+    <h2 id="packages" class="ui header">
+        Packages
+        <a href="#packages" class="headerlink"><i class="fas fa-link"></i></a>
+    </h2>
+
+    <div class="ui link list">
+        {% for package in packages %}
+            <a class="item">{{ package|route('class:short') }}</a>
+        {% endfor %}
+    </div>
+{% endif %}
+
+{% if namespaces|default([]) is not empty %}
+    <h2 id="namespaces" class="ui header">
+        Namespaces
+        <a href="#namespaces" class="headerlink"><i class="fas fa-link"></i></a>
+    </h2>
+
+    <div class="ui link list">
+        {% for namespace in namespaces %}
+            <a class="item">{{ namespace|route('class:short') }}</a>
+        {% endfor %}
+    </div>
+{% endif %}
+
+{% if node.interfaces is not empty or node.classes is not empty or node.traits is not empty or node.enums is not empty %}
+    <h2 id="interfaces_class_traits" class="ui header">
+        Interfaces, Classes, Traits and Enums
+        <a href="#interfaces_class_traits" class="headerlink"><i class="fas fa-link"></i></a>
+    </h2>
+
+    <ul class="ui link list">
+        {% for interface in node.interfaces %}
+            <a class="item">{{ interface|route('class:short') }}</a>
+            <dd>{{ interface.summary }}</dd>
+        {% endfor %}
+
+        {% for class in node.classes %}
+            <a class="item"><a class="ui olive circular label">C</a> {{ class|route('class:short') }}</a>
+            <dd>{{ class.summary }}</dd>
+        {% endfor %}
+
+        {% for trait in node.traits %}
+            <a class="item">{{ trait|route('class:short') }}</a>
+            <dd>{{ trait.summary }}</dd>
+        {% endfor %}
+
+        {% for enum in node.enums %}
+            <a class="item">{{ enum|route('class:short') }}</a>
+            <dd>{{ enum.summary }}</dd>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+{% set constants = constants(node) %}
+{% set properties = properties(node) %}
+{% set methods = methods(node) %}
+
+{% if constants is not empty or node.functions is not empty or methods is not empty or properties is not empty %}
+    <h3 id="toc">
+        Table of Contents
+        <a href="#toc" class="headerlink"><i class="fas fa-link"></i></a>
+    </h3>
+
+    <dl class="phpdocumentor-table-of-contents">
+        {% for constant in constants(node)|sortByVisibility %}
+            {{ include('components/table-of-contents-entry.html.twig', {'type': 'constant', 'node': constant}) }}
+        {% endfor %}
+        {% for case in cases(node)|sortByVisibility %}
+            {{ include('components/table-of-contents-entry.html.twig', {'type': 'case', 'node': case}) }}
+        {% endfor %}
+        {% for property in properties(node)|sortByVisibility %}
+            {{ include('components/table-of-contents-entry.html.twig', {'type': 'property', 'node': property}) }}
+        {% endfor %}
+        {% for method in methods(node)|sortByVisibility %}
+            {{ include('components/table-of-contents-entry.html.twig', {'type': 'method', 'node': method}) }}
+        {% endfor %}
+        {% for function in node.functions|default([]) %}
+            {{ include('components/table-of-contents-entry.html.twig', {'type': 'function', 'node': function}) }}
+        {% endfor %}
+    </dl>
+{% endif %}

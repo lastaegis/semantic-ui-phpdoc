@@ -1,0 +1,3 @@
+{% if not node.description.empty %}
+    <p>{{ node.description|description|markdown }}</p>
+{% endif %}

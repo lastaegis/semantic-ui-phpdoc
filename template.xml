@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <template>
-  <name>semantic-ui</name>
+  <name>phpdoc-semantic-ui</name>
   <author>Ibnu Aulia Nugraha Alihaq</author>
   <email>ibnuauliana@gmail.com</email>
   <version>1.0.0</version>
   <transformations>
-    <transformation writer="twig" source="css/semantic.css.twig" artifact="assets/semantic.css" />
-    <transformation writer="twig" source="css/custom.css.twig" artifact="assets/custom.css" />
-    <transformation writer="twig" source="js/semantic.js.twig" artifact="assets/semantic.js" />
-    <transformation writer="twig" source="templates/default/index.html.twig" artifact="index.html"/>
-    <transformation writer="twig" query="files" source="templates/default/file.html.twig" />
+    <transformation writer="twig" source="templates/phpdoc-semantic-ui/css/custom.css.twig" artifact="assets/custom.css" />
+    <transformation writer="twig" source="templates/phpdoc-semantic-ui/index.html.twig" artifact="index.html"/>
+    <transformation writer="twig" query="files" source="templates/phpdoc-semantic-ui/file.html.twig" />
     <transformation writer="sourcecode" query="files" source="templates/default/source/file.source.txt.twig" artifact="files/{{path}}.txt" />
     <transformation writer="twig" query="indexes.namespaces" source="templates/default/namespace.html.twig" />
     <transformation writer="twig" query="indexes.packages" source="templates/default/package.html.twig" />
@@ -24,6 +22,7 @@
     <transformation writer="twig" source="templates/default/reports/deprecated.html.twig" artifact="reports/deprecated.html" />
     <transformation writer="twig" source="templates/default/reports/markers.html.twig" artifact="reports/markers.html" />
     <transformation writer="twig" source="templates/default/indices/files.html.twig" artifact="indices/files.html" />
+
     <transformation writer="RenderGuide" />
     <transformation writer="Graph" source="Class" artifact="graphs/classes.svg" />
   </transformations>

@@ -102,3 +102,33 @@
 #example .following.menu .menu .active.item {
     font-weight: bold;
 }
+
+#example .example i.code {
+    cursor: pointer;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    margin: 0;
+    opacity: 0.5;
+    font-size: 12px;
+    color: #000000;
+    -webkit-transition: opacity 0.3s ease-out;
+    -moz-transition: opacity 0.3s ease-out;
+    -o-transition: opacity 0.3s ease-out;
+    -ms-transition: opacity 0.3s ease-out;
+    transition: opacity 0.3s ease-out;
+}
+
+#example .example:first-child i.code, #example h2 + .example i.code, #example h3 + .example i.code, #example h4 + .example i.code {
+    top: 0.75em;
+}
+
+#example .example {
+    margin-bottom: 2em;
+    position: relative;
+    -webkit-tap-highlight-color: transparent;
+}
+
+h4 {
+    margin-bottom: 0px !important;
+}

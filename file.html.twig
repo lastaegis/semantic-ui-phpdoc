@@ -1,0 +1,22 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <div class="ui masthead vertical segment">
+        <div class="ui fluid container">
+            <div class="introduction">
+                <h1 class="ui header">
+                    {{ node.name }}
+                    <div class="sub header">
+                        {{ include('components/summary.html.twig') }}
+                        {{ include('components/description.html.twig') }}
+{#                        {{ include('components/tags.html.twig', {node: node}) }}#}
+
+                        {{ include ('components/table-of-contents.html.twig') }}
+                    </div>
+                    {% include('components/breadcrumbs.html.twig') %}
+                </h1>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

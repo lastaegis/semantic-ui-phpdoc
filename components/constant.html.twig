@@ -1,0 +1,14 @@
+<div class="example">
+    <h4 id="constant_{{ constant.name }}">
+        {{ constant.name }}
+        <a href="{{ link(constant) }}" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    {{ include('components/element-found-in.html.twig', {'node': constant}) }}
+    {% if node.file.source %}
+        <a href="{{ target_path }}#source-view.{{ node.line }}" data-line="{{ node.line }}" data-modal="source-view"></a>
+    {% endif %}
+
+    {{ include('components/summary.html.twig', {'node': constant}) }}
+    {{ include('components/constant-signature.html.twig', {'node': constant}) }}
+    {{ include ('components/tags.html.twig', {'node': constant}) }}
+</div>

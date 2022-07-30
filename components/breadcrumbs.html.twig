@@ -1,0 +1,7 @@
+{% set breadcrumbs = usesNamespaces ? breadcrumbs(node) : packages(node) %}
+<div class="ui breadcrumb">
+    {% for breadcrumb in breadcrumbs %}
+        <a class="section" href="{{ link(breadcrumb) }}">{{ breadcrumb.name }}</a>
+        <i class="right angle icon divider"></i>
+    {% endfor %}
+</div>

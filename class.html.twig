@@ -1,0 +1,25 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <div class="ui masthead vertical segment">
+        <div class="ui fluid container">
+            <div class="introduction">
+                <h1 class="ui header">
+                    {{ node.name == '\\' ? 'API Documentation' : node.name }}
+                    <div class="sub header">
+                        {{ include('components/summary.html.twig') }}
+                        {{ include('components/description.html.twig') }}
+                    </div>
+                    {% include('components/breadcrumbs.html.twig') %}
+                </h1>
+            </div>
+        </div>
+    </div>
+    <div class="main ui fluid container">
+        {{ include('components/class-title.html.twig') }}
+        {{ include('components/element-header.html.twig') }}
+        {{ include('components/constants.html.twig') }}
+        {{ include('components/properties.html.twig') }}
+        {{ include('components/methods.html.twig') }}
+    </div>
+{% endblock %}
