@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    {% block head %}
+        <title>{% block title %}{{ project.name }}{% endblock %}</title>
+    {% endblock %}
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{ renderBaseUrlHeader() }}
+    {% block stylesheets %}
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="assets/semantic.css"/>
+    {% endblock %}
+</head>
+<body id="top">
+    {% include 'components/header.html.twig' %}
+
+    <main class="phpdocumentor">
+        <div class="phpdocumentor-section">
+            {% include 'components/sidebar.html.twig' %}
+
+            <div class="phpdocumentor-column -eight phpdocumentor-content">
+                {% block content %}{% endblock %}
+                {% include 'components/search-results.html.twig' %}
+            </div>
+        </div>
+        {{ include('components/back-to-top.html.twig') }}
+    </main>
+
+    <script>
+        cssVars({});
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script type="application/javascript" src="assets/semantic.js"></script>
+</body>
+</html>
