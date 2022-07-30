@@ -1,0 +1,35 @@
+<div class="ui sidebar visible inverted vertical menu">
+    <div class="item">
+        <a class="ui logo icon image" href="/">
+            <img src="https://semantic-ui.com/images/logo.png">
+        </a>
+        <a href="/"><b>PHPDoc</b></a>
+    </div>
+    {% for version in project.versions %}
+        {% for toc in version.tableOfContents %}
+            <div class="item">
+                <div class="header">{{ toc.name }}</div>
+                <div class="menu">
+                    {% for root in toc.roots %}
+                        {{ toc(root, 'components/menu.html.twig', 1) }}
+                    {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
+    {% endfor %}
+    <div class="item">
+        <div class="header">Report</div>
+        <div class="menu">
+            <a class="item" href="graphs/classes.html">Class Diagram</a>
+            <a class="item" href="reports/deprecated.html">Deprecated</a>
+            <a class="item" href="/introduction/advanced-usage.html">Errors</a>
+            <a class="item" href="/introduction/glossary.html">Markers</a>
+        </div>
+    </div>
+    <div class="item">
+        <div class="header">Indices</div>
+        <div class="menu">
+            <a class="item" href="indices/files.html">Files</a>
+        </div>
+    </div>
+</div>

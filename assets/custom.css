@@ -1,0 +1,104 @@
+#example .sidebar.menu .logo.image, #example .ui.menu .logo.image {
+    width: 35px;
+    margin-right: 1em;
+}
+
+#example > .pusher > .full.height {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+#example:not(.site) > .pusher > .full.height {
+    background-color: #FFFFFF;
+}
+
+/* page layout */
+#example .full.height > .toc {
+    position: fixed;
+    z-index: 1;
+    background-color: #1b1c1d;
+    width: 250px;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+}
+#example .full.height > .toc .ui.menu {
+    border-radius: 0;
+    border-width: 0 1px 0 0;
+    box-shadow: none;
+    margin: 0;
+    width: inherit;
+    overflow: hidden;
+    will-change: transform;
+    max-height: 100vh;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+#example .article {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    min-width: 0px;
+    margin-left: 250px;
+}
+
+#example .full.height > .toc .ui.menu::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+#example .full.height > .toc .ui.menu::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0);
+}
+#example .full.height > .toc .ui.menu::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+#example .full.height > .toc .ui.menu:hover::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+#example .full.height > .toc .ui.menu:hover::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+#example > .pusher > .footer,
+#example .article > .footer {
+    border-top: 1px solid #DDDDDD;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.08) inset;
+    background-color: #FAFAFA;
+    padding-top: 2em;
+}
+
+#example > .pusher > .footer {
+    clear: both;
+}
+
+#example .fixed.menu > .container,
+#example .main.container,
+#example .masthead > .container,
+#example .footer > .container {
+    position: relative;
+}
+
+#example .main.container {
+    padding: 2em 0em 7em;
+}
+#example .wide.main.container {
+    width: 80%;
+    margin: 0 auto;
+    max-width: 1140px;
+}
+
+#example .main.container > .right.rail .sticky,
+#example .main.container > .tab > .examples > .right.rail .sticky,
+#example .main.container > .tab > .right.rail .sticky {
+    padding-bottom: 2em;
+}
+
+#example .following.menu .menu .active.item {
+    font-weight: bold;
+}
