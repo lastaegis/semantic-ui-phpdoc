@@ -1,4 +1,4 @@
-{% extends 'layout.html.twig' %}
+{% extends 'base.html.twig' %}
 
 {% block content %}
     <div class="ui masthead vertical segment">
@@ -15,5 +15,13 @@
             </div>
         </div>
     </div>
-    {{ include('components/table-of-contents.html.twig', {'namespaces': node.children}) }}
+    <div class="main ui fluid container">
+        {{ include('components/interface-title.html.twig') }}
+        {{ include('components/element-found-in.html.twig') }}
+        {{ include('components/element-header.html.twig') }}
+
+        {{ include('components/constants.html.twig') }}
+        {{ include('components/methods.html.twig') }}
+        {{ include('components/source-modal.html.twig') }}
+    </div>
 {% endblock %}

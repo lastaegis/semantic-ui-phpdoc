@@ -32,7 +32,7 @@
 
     <ul class="ui link list">
         {% for interface in node.interfaces %}
-            <a class="item">{{ interface|route('class:short') }}</a>
+            <a class="item"><a class="ui olive circular label">I</a> {{ interface|route('class:short') }}</a>
             <dd>{{ interface.summary }}</dd>
         {% endfor %}
 
@@ -42,12 +42,12 @@
         {% endfor %}
 
         {% for trait in node.traits %}
-            <a class="item">{{ trait|route('class:short') }}</a>
+            <a class="item"><a class="ui olive circular label">T</a> {{ trait|route('class:short') }}</a>
             <dd>{{ trait.summary }}</dd>
         {% endfor %}
 
         {% for enum in node.enums %}
-            <a class="item">{{ enum|route('class:short') }}</a>
+            <a class="item"><a class="ui olive circular label">E</a> {{ enum|route('class:short') }}</a>
             <dd>{{ enum.summary }}</dd>
         {% endfor %}
     </ul>
