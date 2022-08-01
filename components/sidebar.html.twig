@@ -3,7 +3,7 @@
         <a class="ui logo icon image" href="/">
             <img src="https://semantic-ui.com/images/logo.png">
         </a>
-        <a href="index.html"><b>PHPDoc</b></a>
+        <a href="{{  path('index.html') }}"><b>PHPDoc</b></a>
     </div>
     {% for version in project.versions %}
         {% for toc in version.tableOfContents %}
@@ -20,10 +20,10 @@
     <div class="item">
         <div class="header">Report</div>
         <div class="menu">
-            <a class="item" href="graphs/classes.html">Class Diagram</a>
-            <a class="item" href="reports/deprecated.html">Deprecated</a>
-            <a class="item" href="/introduction/advanced-usage.html">Errors</a>
-            <a class="item" href="/introduction/glossary.html">Markers</a>
+            <a class="item" href="{{ path('graphs/class.html') }}">Class Diagram</a>
+            <a class="item" href="{{ path('reports/deprecated.html') }}">Deprecated</a>
+            <a class="item" href="{{ path('reports/errors.html') }}">Errors</a>
+            <a class="item" href="{{ path('reports/markers.html') }}">Markers</a>
         </div>
     </div>
     <div class="item">
