@@ -7,9 +7,9 @@
                 : <span class="phpdocumentor-signature__argument__return-type">{{ argument.type|route('class:short')|join('|')|raw }}</span>
                 {% if argument.default %} = <span class="phpdocumentor-signature__argument__default-value">{{ argument.default }}</span>{% endif %}
             </dt>
-            <dd class="phpdocumentor-argument-list__definition">
+            <span class="phpdocumentor-argument-list__definition">
                 {{ include('components/description.html.twig', {'node': argument}) }}
-            </dd>
+            </span>
         {% endfor %}
     </dl>
 {% endif %}
